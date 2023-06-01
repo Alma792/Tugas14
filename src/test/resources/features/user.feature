@@ -21,3 +21,9 @@ Feature: User
     Given I Set DELETE API Endpoints
     When I Send DELETE HTTP Request
     Then I Receive Valid HTTP Response Code 204
+
+  Scenario: Get As admin I have be able to get detail of specific existing user data
+    Given I set GET Endpoints
+    When I send GET HTTP Request
+    Then I receive Valid HTTP Response 200
+    And I receive Specific Existing User Valid Data

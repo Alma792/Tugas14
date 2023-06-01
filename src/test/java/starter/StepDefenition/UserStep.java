@@ -9,6 +9,7 @@ import starter.user.Get;
 import starter.user.Post;
 import starter.user.Put;
 import starter.user.Delete;
+import starter.user.Get2;
 
 public class UserStep {
 
@@ -20,6 +21,8 @@ public class UserStep {
     Put put;
     @Steps
     Delete delete;
+    @Steps
+    Get2 get2;
 
 
     @Given("I Set GET Endpoints")
@@ -84,6 +87,24 @@ public class UserStep {
     @Then("I Receive Valid HTTP Response Code 204")
     public void ReceiveHTTPResponse204(){
         delete.ReceiveHTTPResponse204();
+    }
+
+
+    @Given("I set GET Endpoints")
+    public void setGetEndpoints(){
+        get2.setGetEndpoints();
+    }
+    @When("I send GET HTTP Request")
+    public void sendHTTPRequest(){
+        get2.sendHTTPRequest();
+    }
+    @Then("I receive Valid HTTP Response 200")
+    public void HTTPresponse200(){
+        get2.HTTPresponse200();
+    }
+    @And("I receive Specific Existing User Valid Data")
+    public void receiveValidData(){
+        get2.receiveValidData();
     }
 
 }
